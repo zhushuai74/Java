@@ -14,6 +14,7 @@ public class UnderGrad extends Student {
         else{
             creditUpperbound = 12;
         }
+        this.programFee = programFee;
     }
     public void computeTuition() {
         if (numCredit >= creditUpperbound) {
@@ -28,6 +29,6 @@ public class UnderGrad extends Student {
         return "\nUnderGrad Student:"+"\n"+
                 (isState ? "In-State":"Out-Of-State")+
                 super.toString()+
-                df1.format(programFee)+"\n\n";
+                "Student Program Fee:\t"+df1.format(programFee)+"\n\n";
     }
 }

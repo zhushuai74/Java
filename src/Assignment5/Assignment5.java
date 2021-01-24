@@ -23,7 +23,7 @@ public class Assignment5
 
         // ArrayList object is used to store student objects
         ArrayList<Student> studentList = new ArrayList<Student>();
-
+    
         try
         {
             printMenu();     // print out menu
@@ -46,15 +46,14 @@ public class Assignment5
                         case 'A':   //Add Student
                             System.out.print("Please enter a student information to add:\n");
                             inputInfo = stdin.readLine().trim();
-                            /***********************************************************************************
-                             ***  ADD your code here to create an object of one of child classes of Student class
-                             ***  and add it to the studentList
-                             ***********************************************************************************/
+                            studentList.add(StuParser.parseStringToStudent(inputInfo));
+
                             break;
                         case 'C':   //Compute tuition
-                            /***********************************************************************************
-                             ***  ADD your code here to compute the tuition
-                             ***********************************************************************************/
+                            for (int i = 0;i <studentList.size();i++){
+                                studentList.get(i).computeTuition();
+                                
+                            }
                             System.out.print("tuition computed\n");
                             break;
                         case 'D':   //Count certain students
@@ -62,18 +61,20 @@ public class Assignment5
                             inputInfo = stdin.readLine().trim();
                             int credits = Integer.parseInt(inputInfo);
                             int count =0;
-                            /***********************************************************************************
-                             ***  ADD your code here to search for students who have same number of credits as entered by the user
-                             ***********************************************************************************/
+                            for (int i = 0;i <studentList.size();i++){
+                                if(credits == studentList.get(i).getNumCredit()){
+                                    count++;
+                                }
+                            }
 
                             System.out.println("The number of students who are taking " + credits
                                     + " credits is: " + count);
                             break;
                         case 'L':   //List Students
-                            /***********************************************************************************
-                             ***  ADD your code here to print out all students. If there is no student
-                             ***  print "no student\n"
-                             ***********************************************************************************/
+                            for (int i = 0;i <studentList.size();i++){
+                                System.out.print(studentList.get(i).toString());
+                                
+                            }
                             break;
                         case 'Q':   //Quit
                             break;
