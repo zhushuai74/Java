@@ -8,7 +8,7 @@ public class UnderGrad extends Student {
     public UnderGrad(String fName, String lName, String id, int credits, double rate, boolean isState, double programFee){
         super(fName, lName, id, credits, rate);
         this.isState = isState;
-        if(isState = true){
+        if(isState){
             creditUpperbound = 7;
         }
         else{
@@ -26,7 +26,7 @@ public class UnderGrad extends Student {
     }
     @Override
     public String toString(){
-        return "\nUnderGrad Student:"+"\n"+
+        return "\nUnderGrad:"+"\n"+
                 (isState ? "In-State":"Out-Of-State")+
                 super.toString()+
                 "Student Program Fee:\t"+df1.format(programFee)+"\n\n";

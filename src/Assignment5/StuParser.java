@@ -4,11 +4,11 @@ public class StuParser {
     public static Student parseStringToStudent(String lineToParse){
         Student stu;
         String[] strArr = lineToParse.split("\\/");
-        if(strArr[0]=="Graduate"){
+        if(strArr[0].equals("Graduate")){
             stu = new Graduate(strArr[1], strArr[2],strArr[3], Integer.parseInt(strArr[4]), Double.parseDouble(strArr[5]), Double.parseDouble(strArr[6]));
         }else{
             boolean status;
-            if (strArr[6].toLowerCase() == "instates"){
+            if (strArr[6].toLowerCase().equals("instate")){
                 status = true;
             }
             else {

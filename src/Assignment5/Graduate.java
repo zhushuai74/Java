@@ -14,7 +14,7 @@ public class Graduate extends Student {
     public String toString(){
         return "\nGraduate Student:"+
                 super.toString()+
-                "Grad Fee:\t\t"+df1.format(gradFee)+"\n";
+                "Grad Fee:\t\t"+df1.format(gradFee)+"\n\n";
     }
 
 }
